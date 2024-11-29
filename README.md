@@ -29,7 +29,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/anjumali10/product-list-with-cart)
+- Solution URL: [Solution](https://github.com/anjumali10/product-list-with-cart)
 
 ## My process
 
@@ -54,8 +54,8 @@ In the future, I want to:
 - Improve accessibility and add keyboard navigation for better usability.
 
 ## Author
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/anjumali10)
-- GitHub - [Your GitHub](https://github.com/anjumali10)
+- Frontend Mentor - [anjumali10](https://www.frontendmentor.io/profile/anjumali10)
+- GitHub - [anjumali10](https://github.com/anjumali10)
 
 ## Acknowledgments
 Special thanks to the Frontend Mentor community for providing valuable project and inspiration for this project. Also, a big shoutout to MDN Web Docs for being a reliable source for all things web development!
