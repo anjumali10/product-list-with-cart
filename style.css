@@ -1,0 +1,341 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap');
+*{
+    font-family: "Red Hat Text", sans-serif;
+    padding: 0;
+    margin: 0;
+}
+main{
+    padding: 60px;
+    display: flex;
+    flex-direction: row;
+    background-color: hsl(20, 50%, 98%);
+}
+.left{
+    width: 70%;
+}
+.right {
+    width: 30%;
+}
+.card-container{
+    padding-top: 15px;
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    row-gap: 30px;
+}
+.card{
+    position: relative;
+    width: 190px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.card .image{
+    width: 190px;
+    height: 171px;
+    overflow: hidden;
+    border-radius: 5px;
+}
+.card .image img{
+    width: 100%;
+    object-fit: contain;
+    border-radius: 5px;
+}
+
+.card .category{
+    font-size: 14px;
+    color: gray;
+}
+.card .name{
+    font-size: 14px;
+    font-weight: 500;
+}
+.card .price{
+    color: hsl(14, 86%, 42%);
+}
+.card .cart-button{
+    border: 1px solid gray;
+    border-radius: 50px;
+    width: 120px;
+    height: 30px;
+    font-size: 13px;
+    font-weight: 500;
+    position: absolute;
+    bottom: 65px;
+    left: 36px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.cart-button img{
+    width: 15px;
+}
+.card .description{
+    padding-top: 20px;
+}
+.card .image.selected{
+    outline: 2px solid hsl(14, 86%, 42%);
+}
+
+.card .cart-button-selected{
+    border: 1px solid hsl(14, 86%, 42%);
+    background-color: hsl(14, 86%, 42%);
+    width: 120px;
+    height: 30px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    bottom: 65px;
+    left: 36px;
+    visibility: hidden;
+}
+.card .cart-button-selected .circle{
+    border: 1px solid white;
+    border-radius: 50px;
+    width: 12px;
+    height: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin: 5px;
+}
+.card .cart-button-selected p{
+    color: white;
+    font-size: small;
+}
+.cart{
+    background-color: white;
+    width: 92%;
+    padding: 10px;
+    border-radius: 10px;
+}
+.cart .empty{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0px;
+    font-size: 14px;
+}
+.cart .cart-header{
+    color: hsl(14, 86%, 42%);
+    font-weight: bold;
+}
+.non-empty .product{
+    padding-top: 20px;
+    position: relative;
+}
+.non-empty .name{
+    font-size: 12px;
+    font-weight: bold;
+}
+.non-empty .price, .total-price{
+    font-size: 12px;
+    padding: 0px 2px;
+    color: gray;
+}
+.non-empty{
+    display: none;
+}
+.non-empty .quantity{
+    font-size: 12px;
+    color: hsl(14, 86%, 42%);
+    padding-right: 10px;
+}
+.product .line{
+    background-color: #ebe7e7;
+    height: 1px;
+    width: 90%;
+    margin: auto;
+    margin-top: 10px;
+}
+.product .remove{
+    position: absolute;
+    right: 15px;
+    bottom: 25px;
+}
+.product .circle{
+    height: 12px;
+    width: 12px;
+    border-radius: 50px;
+    border: 1px solid #bebebe;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.product .circle img{
+    filter: invert();
+    opacity: 40%;
+    transform: rotate(45deg);
+}
+.cart .order-total{
+    padding: 20px 0px;
+    position: relative;
+}
+.cart .delivery-type{
+    font-size: 12px;
+    background-color: hsl(20, 50%, 98%);
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.cart .delivery-type img{
+    width: 14px;
+}
+.cart .confirm-order{
+    background-color: hsl(14, 86%, 42%);
+    padding: 7px;
+    text-align: center;
+    border-radius: 50px;
+    margin: 20px 0px;
+    color: white;
+    font-size: 12px;
+    cursor: pointer;
+}
+.cart .order-total .total{
+    position: absolute;
+    font-size: 16px;
+    right: 1px;
+    font-weight: bold;
+}
+.cart .order-total{
+    font-size: 12px;
+}
+.remove{
+    cursor: pointer;
+}
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .popup-content {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    width: 25%;
+    max-width: 500px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .popup-header {
+    text-align: center;
+  }
+  
+  .item-list {
+    margin: 20px 0;
+    padding: 10px 0;
+  }
+  .item{
+    /* border-top: 1px solid #e0e0e0; */
+    border-bottom: 1px solid #e0e0e0;
+    padding: 5px 0px;
+  }
+  
+  .popup-footer {
+    text-align: center;
+  }
+  
+  #start-new-order {
+    background-color: hsl(14, 86%, 42%);
+    padding: 7px;
+    text-align: center;
+    border-radius: 50px;
+    margin: 20px 0px;
+    color: white;
+    font-size: 12px;
+    cursor: pointer;
+  }
+  
+  @media screen and (max-width: 375px) {
+    /* Adjust main layout */
+    main {
+      padding: 20px;
+      flex-direction: column;
+    }
+  
+    .left, .right {
+      width: 100%;
+    }
+  
+    /* Card container adjustments */
+    .card-container {
+      grid-template-columns: 1fr; /* 2 columns for smaller screens */
+      gap: 20px;
+    }
+  
+    .card {
+      width: 100%; /* Reduce card size */
+    }
+  
+    .card .image {
+      width: 100%;
+    }
+  
+    .card .cart-button {
+        bottom: 22%;
+        left: 30%;
+    }
+    .card .cart-button-selected{
+        bottom: 22%;
+        left: 30%;
+    }
+  
+    /* Cart adjustments */
+    .cart {
+      width: 90%; /* Full width for mobile */
+      padding: 15px;
+    }
+  
+    .cart .confirm-order {
+      font-size: 10px; /* Reduce font size for buttons */
+      padding: 5px;
+    }
+  
+    /* Popup adjustments */
+    .popup-content {
+      width: 90%; /* Take more space on smaller screens */
+      padding: 15px;
+    }
+  
+    .popup-content .item-list {
+      font-size: 12px; /* Reduce font size for list items */
+    }
+  
+    #start-new-order {
+      font-size: 10px; /* Smaller button text */
+      padding: 5px;
+    }
+  
+    /* Adjust fonts and spacing */
+    * {
+      font-size: 14px; /* Base font size adjustment for mobile */
+    }
+  
+    .card .name, .card .price, .card .category {
+      font-size: 12px;
+    }
+  
+    .cart .order-total .total {
+      font-size: 14px;
+    }
+  }
+  
